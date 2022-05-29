@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Counter } from './component/counter/counter';
+import { CounterComponent } from './component/counter/counter';
+import { HomeComponent } from './component/home/home';
 
 function App() {
   let title : string = 'MOCK PROJECT REACTJS'
@@ -9,8 +10,9 @@ function App() {
     <div className="App">
       <div className='d-flex p-3 justify-content-evenly'> 
         <h1>{title}</h1>
-        <Counter></Counter>
+        <CounterComponent></CounterComponent>
       </div>
+      <HomeComponent></HomeComponent>
     </div>
   );
 }

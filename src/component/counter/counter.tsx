@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { RootState } from '../../redux/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from './counter-slice';
-import './counter.css'
+import './counter.css';
+import { getCounter } from '../../redux/thunk'
 
-export function Counter() {
+export function CounterComponent() {
   const count = useSelector((state: RootState) => state.counter.value)
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getCounter()); 
+  }, []);
 
   return (
     <div>
