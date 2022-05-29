@@ -1,0 +1,9 @@
+button {
+    background-color: crimson;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+span {
+    width: 10px;
+}
