@@ -1,7 +1,7 @@
 import React from 'react'
 import { RootState } from '../../redux/store'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../../redux/slices/counter-slice';
+import { decrement, increment } from './counter-slice';
 import './counter.css'
 
 export function Counter() {
