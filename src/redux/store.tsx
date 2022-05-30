@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { counterSlice } from '../component/counter/counter-slice';
 import thunkMiddleware from 'redux-thunk';
+import { repoSlice } from '../component/list-repo/list-repo-slice';
 
 export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
+    repo : repoSlice.reducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunkMiddleware),
 })
