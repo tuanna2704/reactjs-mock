@@ -6,15 +6,15 @@ import { useEffect } from 'react';
 
 export const useAppDispatch = () => useDispatch<AppDispatch>()
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
 export const useGetListRepo = () => {
     const repos = useSelector((state: RootState) => state.repo)
     const dispatch = useDispatch()
     useEffect(() => {
         if (repos.loading !== 'success' && repos.loading !== 'pending') {
-            console.log('first')
             dispatch(getRepoListAsync()); 
           } else {
             dispatch(getRepoList())
           }
-    })
+    },[repos])
 }
