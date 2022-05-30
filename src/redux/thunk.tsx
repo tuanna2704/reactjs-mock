@@ -10,7 +10,7 @@ export const getCounter: any = createAsyncThunk(
   }
 )
 
-export const getListRepo: any = createAsyncThunk(
+export const getRepoListAsync: any = createAsyncThunk(
   'repo',
   async () => {
     const response = await fetchListRepo()

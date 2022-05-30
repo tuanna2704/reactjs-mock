@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getListRepo } from '../../redux/thunk';
+import { getRepoListAsync } from '../../redux/thunk';
 
 export interface Repo {
   id: number,
@@ -20,14 +20,16 @@ export const repoSlice = createSlice({
   name: 'repo',
   initialState,
   reducers: {
-
+    getRepoList: (state) => {
+      state = state
+    },
   },
   extraReducers: (builder) => {
      builder
-       .addCase(getListRepo.pending, (state) => {
+       .addCase(getRepoListAsync.pending, (state) => {
           state.loading = 'pending'
        })
-       .addCase(getListRepo.fulfilled, (state, action) => {
+       .addCase(getRepoListAsync.fulfilled, (state, action) => {
           state.loading = 'success'
           state.repo = action.payload
        });
@@ -35,6 +37,6 @@ export const repoSlice = createSlice({
  
 })
 
-export const { } = repoSlice.actions
+export const { getRepoList } = repoSlice.actions
 
 export default repoSlice.reducer
