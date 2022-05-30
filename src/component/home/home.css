@@ -1,0 +1,20 @@
+.header {
+    width: 100%;
+    height: 56px;
+    background-color: crimson;
+    border: whitesmoke 1px solid;
+}
+
+ul {
+    width: 20%;
+    height: 54px;
+    list-style: none;
+}
+
+li {
+    padding: 8px;
+}
+
+li:hover {
+    background-color: black;
+}
