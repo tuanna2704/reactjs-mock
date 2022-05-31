@@ -1,17 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { getRepoListAsync } from '../../redux/thunk';
+import { RepoList } from '../../model/repo.model'
 
-export interface Repo {
-  id: number,
-  name: string,
-  description: string,
-  watchers_count:number,
-  language:string,
-  open_issues:number,
-  private:boolean,
-}
-
-const initialState: any = {
+const initialState: RepoList = {
   repo:[],
   loading:'idle',
 }
@@ -21,7 +12,7 @@ export const repoSlice = createSlice({
   initialState,
   reducers: {
     getRepoList: (state) => {
-      state = state
+      return state
     },
   },
   extraReducers: (builder) => {

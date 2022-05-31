@@ -2,10 +2,11 @@ import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, 
 import { useSelector } from 'react-redux';
 import { useGetListRepo } from '../../redux/hook';
 import { RootState } from '../../redux/store';
+import { RepoList } from '../../model/repo.model';
 
 function ListRepoTwoComponent() {
 
-  const repos = useSelector((state: RootState) => state.repo)
+  const repos : RepoList = useSelector((state: RootState) => state.repo)
   useGetListRepo()
 
 
