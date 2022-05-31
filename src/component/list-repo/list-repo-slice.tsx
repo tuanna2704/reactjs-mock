@@ -11,9 +11,6 @@ export const repoSlice = createSlice({
   name: 'repo',
   initialState,
   reducers: {
-    getRepoList: (state) => {
-      return state
-    },
   },
   extraReducers: (builder) => {
      builder
@@ -28,6 +25,6 @@ export const repoSlice = createSlice({
  
 })
 
-export const { getRepoList } = repoSlice.actions
+export const { } = repoSlice.actions
 
 export default repoSlice.reducer

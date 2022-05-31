@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import ListRepoComponent from "../list-repo/list-repo";
-import AddRepoComponent from "../add-repo/add-repo";
+import AddRepoComponent from "../list-repo/add-repo/add-repo";
 import WelcomeComponent from "../welcome/welcome";
 import ListRepoTwoComponent from '../list-repo/list-repo-two';
 

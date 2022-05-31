@@ -1,6 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from './store'
-import { getRepoList } from '../component/list-repo/list-repo-slice';
 import { getRepoListAsync } from './thunk';
 import { useEffect } from 'react';
 
@@ -13,8 +12,6 @@ export const useGetListRepo = () => {
     useEffect(() => {
         if (repos.loading !== 'success' && repos.loading !== 'pending') {
             dispatch(getRepoListAsync()); 
-          } else {
-            dispatch(getRepoList())
-          }
+        } 
     },[repos])
 }
