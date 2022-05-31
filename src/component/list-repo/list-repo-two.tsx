@@ -11,6 +11,7 @@ function ListRepoTwoComponent() {
 
   return (
     <div>
+      <div className='d-flex justify-content-center mt-3'><h2>List Repo 2</h2></div><hr/>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

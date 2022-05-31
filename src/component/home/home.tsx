@@ -27,7 +27,6 @@ export default function HomeComponent() {
             </li>
           </ul>
         </div>
-        <hr />
         <Routes>
             <Route path='/' element={<WelcomeComponent/>} />
             <Route path='/list-repo' element={<ListRepoComponent/>} />

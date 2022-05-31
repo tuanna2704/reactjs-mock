@@ -13,8 +13,8 @@ function ListRepoComponent() {
 
   return (
     <div>
+      <div className='d-flex justify-content-center align-items-center mt-3'><h2>List Repo 1</h2></div><hr/>
       <div className='d-flex justify-content-center align-items-center mb-3'><Link style={{ textDecoration: 'none'}} to="/add-repo">ADD <AddIcon></AddIcon></Link></div>
-      <hr />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

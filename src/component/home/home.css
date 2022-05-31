@@ -1,12 +1,12 @@
 .header {
-    width: 100%;
+    width: 98.90vw;
     height: 56px;
     background-color: crimson;
     border: whitesmoke 1px solid;
 }
 
 ul {
-    width: 20%;
+    width: 30vw;
     height: 54px;
     list-style: none;
 }
