@@ -10,7 +10,7 @@ export const useGetListRepo = () => {
     const repos = useSelector((state: RootState) => state.repo)
     const dispatch = useDispatch()
     useEffect(() => {
-        if (repos.loading !== 'success' && repos.loading !== 'pending') {
+        if (repos.loading === 'idle') {
             dispatch(getRepoListAsync()); 
         } 
     },[repos,dispatch])

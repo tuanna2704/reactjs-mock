@@ -5,11 +5,12 @@ import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 import {useGetListRepo} from 'redux/hook';
 import {deleteItem} from 'component/list-repo/list-repo-slice';
+import { RepoList } from 'model/repo.model';
 
 function ListRepoComponent() {
 
   const dispatch = useDispatch()
-  const repos = useSelector((state: RootState) => state.repo)
+  const repos : RepoList = useSelector((state: RootState) => state.repo)
   useGetListRepo()
 
   const handleDelete = (id:any) => {
