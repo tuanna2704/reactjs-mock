@@ -64,10 +64,8 @@ function AddRepoComponent() {
     dispatch(addItem(item))
     toast.success('CREATE SUCCESS', {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
       progress: undefined,
     });
     navigate('/list-repo')
