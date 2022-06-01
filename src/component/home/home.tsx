@@ -5,10 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import ListRepoComponent from "../list-repo/list-repo";
-import AddRepoComponent from "../list-repo/add-repo/add-repo";
-import WelcomeComponent from "../welcome/welcome";
-import ListRepoTwoComponent from '../list-repo/list-repo-two';
+import ListRepoComponent from "component/list-repo/list-repo";
+import AddRepoComponent from "component/list-repo/add-repo/add-repo";
+import WelcomeComponent from "component/welcome/welcome";
+import ListRepoTwoComponent from 'component/list-repo/list-repo-two';
 
 export default function HomeComponent() {
   return (

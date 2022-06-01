@@ -1,4 +1,4 @@
-import logo from '../../../src/logo.svg'
+import logo from 'logo.svg'
 import './welcome.css'
 
 function WelcomeComponent() {

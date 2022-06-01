@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './add-repo.css'
 import { useState } from 'react';
-import {addItem} from '../list-repo-slice';
+import {addItem} from 'component/list-repo/list-repo-slice';
 import { useDispatch } from 'react-redux';
 
 function AddRepoComponent() {

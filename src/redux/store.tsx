@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunkMiddleware from 'redux-thunk';
-import { repoSlice } from '../component/list-repo/list-repo-slice';
+import { repoSlice } from 'component/list-repo/list-repo-slice';
 
 export const store = configureStore({
   reducer: {

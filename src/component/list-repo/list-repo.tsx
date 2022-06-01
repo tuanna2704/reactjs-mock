@@ -1,10 +1,10 @@
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { RootState } from 'redux/store';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
-import {useGetListRepo} from '../../redux/hook';
-import {deleteItem} from './list-repo-slice';
+import {useGetListRepo} from 'redux/hook';
+import {deleteItem} from 'component/list-repo/list-repo-slice';
 
 function ListRepoComponent() {
 

@@ -13,5 +13,5 @@ export const useGetListRepo = () => {
         if (repos.loading !== 'success' && repos.loading !== 'pending') {
             dispatch(getRepoListAsync()); 
         } 
-    },[repos])
+    },[repos,dispatch])
 }
