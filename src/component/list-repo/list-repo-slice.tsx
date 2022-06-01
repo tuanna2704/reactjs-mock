@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getRepoListAsync } from 'redux/thunk';
-import { RepoList } from 'model/repo.model'
+import { RepoList } from 'model/repo.model';
 
 const initialState: RepoList = {
   repo:[],

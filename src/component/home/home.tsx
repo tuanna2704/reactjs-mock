@@ -9,11 +9,23 @@ import ListRepoComponent from "component/list-repo/list-repo";
 import AddRepoComponent from "component/list-repo/add-repo/add-repo";
 import WelcomeComponent from "component/welcome/welcome";
 import ListRepoTwoComponent from 'component/list-repo/list-repo-two';
+import { ToastContainer } from 'react-toastify';
 
 export default function HomeComponent() {
   return (
     <Router>
       <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
         <div className='header'>
           <ul className="d-flex justify-content-between">
             <li className='d-flex align-items-center'>

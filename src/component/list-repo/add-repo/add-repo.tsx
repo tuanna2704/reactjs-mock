@@ -5,11 +5,12 @@ import './add-repo.css'
 import { useState } from 'react';
 import {addItem} from 'component/list-repo/list-repo-slice';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddRepoComponent() {
 
   const dispatch = useDispatch()
-  
   const navigate = useNavigate();
   const [item,setItem] = useState({
     name:'',
@@ -61,6 +62,14 @@ function AddRepoComponent() {
       private:item.private,
     })
     dispatch(addItem(item))
+    toast.success('CREATE SUCCESS', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      progress: undefined,
+    });
     navigate('/list-repo')
   }
   return (
