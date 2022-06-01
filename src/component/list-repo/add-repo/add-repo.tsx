@@ -1,11 +1,11 @@
-import { Button, Input, TextField } from '@mui/material';
+import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './add-repo.css'
 import { useState } from 'react';
 import {addItem} from 'component/list-repo/list-repo-slice';
 import { useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function AddRepoComponent() {
@@ -72,10 +72,12 @@ function AddRepoComponent() {
   }
   return (
     <div>
-        <Button className='button-back mt-3' onClick={() => navigate('/list-repo')}><ChevronRightIcon></ChevronRightIcon> Back</Button>
         <div className='d-flex justify-content-center align-items-center'>
           <div>
-            <h2>ADD ITEM</h2>
+            <div className='d-flex mt-5 justify-content-between'>
+              <h2>ADD ITEM</h2>
+              <Button onClick={() => navigate('/list-repo')}><ChevronRightIcon></ChevronRightIcon>Back</Button>
+            </div>
             <form className='d-flex flex-column justify-content-between' onSubmit={handleSubmit}>
               <TextField
                   required
@@ -119,7 +121,16 @@ function AddRepoComponent() {
                 name='open_issues'
                 onChange={handleChange}
                 />
-              <Input type='checkbox' name="private" onChange={handleChange}></Input>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    id="private" 
+                    name="private"
+                    onChange={handleChange}
+                  />
+                }
+                label="Private"
+              />
               <Button type="submit" value="Submit">Submit</Button>
             </form>
           </div>

@@ -22,7 +22,7 @@ export default function HomeComponent() {
               <Link style={{ textDecoration: 'none', color: 'white' }} to="/">Home</Link>
             </li>
             <li className='d-flex align-items-center'>
-              <Link style={{ textDecoration: 'none', color: 'white' }} to="/list-repo">List Repo</Link>
+              <Link style={{ textDecoration: 'none', color: 'white' }} to="/list-repo">List Repo 1</Link>
             </li>
             <li className='d-flex align-items-center'>
               <Link style={{ textDecoration: 'none', color: 'white' }} to="/list-repo-two">List Repo 2</Link>
