@@ -1,14 +1,20 @@
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 import {useGetListRepo} from '../../redux/hook';
+import {deleteItem} from './list-repo-slice';
 
 function ListRepoComponent() {
 
+  const dispatch = useDispatch()
   const repos = useSelector((state: RootState) => state.repo)
   useGetListRepo()
+
+  const handleDelete = (id:any) => {
+    dispatch(deleteItem(id));
+  }
 
 
   return (
@@ -42,7 +48,7 @@ function ListRepoComponent() {
                 <TableCell align="right">{row.open_issues}</TableCell>
                 <TableCell align="right">{row.private ? 'X' : 'O'}</TableCell>
                 <TableCell align="center"><Button>Update</Button></TableCell>
-                <TableCell align="center"><Button>Delete</Button></TableCell>
+                <TableCell align="center" onClick={() => handleDelete(row.id)}><Button>Delete</Button></TableCell>
               </TableRow>
             ))}
           </TableBody>

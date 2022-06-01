@@ -1,10 +1,15 @@
-import { Button, FormControl, Input, InputLabel, TextField } from '@mui/material';
+import { Button, Input, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import './add-repo.css'
 import { useState } from 'react';
+import {addItem} from '../list-repo-slice';
+import { useDispatch } from 'react-redux';
 
 function AddRepoComponent() {
+
+  const dispatch = useDispatch()
+  
   const navigate = useNavigate();
   const [item,setItem] = useState({
     name:'',
@@ -55,7 +60,8 @@ function AddRepoComponent() {
       open_issues: item.open_issues,
       private:item.private,
     })
-    console.log(item)
+    dispatch(addItem(item))
+    navigate('/list-repo')
   }
   return (
     <div>
@@ -70,7 +76,7 @@ function AddRepoComponent() {
                   label="Id"
                   name='id'
                   onChange={handleChange}
-                  />
+                />
               <TextField
                 required
                 id="outlined-required"

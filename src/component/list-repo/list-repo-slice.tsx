@@ -11,20 +11,29 @@ export const repoSlice = createSlice({
   name: 'repo',
   initialState,
   reducers: {
+     addItem(state,action) {
+      state.repo.unshift(action.payload);
+     },
+     updateItem(state,action) {
+        
+     },
+     deleteItem(state,action) {
+        state.repo = state.repo.filter((item) => item.id !== action.payload);
+     }
   },
   extraReducers: (builder) => {
      builder
        .addCase(getRepoListAsync.pending, (state) => {
-          state.loading = 'pending'
+          state.loading = 'pending';
        })
        .addCase(getRepoListAsync.fulfilled, (state, action) => {
-          state.loading = 'success'
-          state.repo = action.payload
+          state.loading = 'success';
+          state.repo = action.payload;
        });
    }
  
 })
 
-export const { } = repoSlice.actions
+export const { addItem,deleteItem } = repoSlice.actions
 
 export default repoSlice.reducer
