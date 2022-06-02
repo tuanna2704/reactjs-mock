@@ -14,7 +14,7 @@ function AddRepoComponent() {
   const navigate = useNavigate();
   const [item,setItem] = useState({
     name:'',
-    id:'',
+    id:0,
     description: '',
     watchers_count:0,
     language:'',
