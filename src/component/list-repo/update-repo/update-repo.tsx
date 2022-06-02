@@ -12,17 +12,17 @@ import { RootState } from 'redux/store';
 
 export default function UpdateRepoComponent(props:any) {
     const [item,setItem] = useState({
-        name:props.updateItem.name,
-        id:props.updateItem.id,
-        description:props.updateItem.description,
-        watchers_count:props.updateItem.watchers_count,
-        language:props.updateItem.language,
-        open_issues:props.updateItem.open_issues,
-        private:props.updateItem.private,
+        name:props?.updateItem?.name,
+        id:props?.updateItem?.id,
+        description:props?.updateItem?.description,
+        watchers_count:props?.updateItem?.watchers_count,
+        language:props?.updateItem?.language,
+        open_issues:props?.updateItem?.open_issues,
+        private:props?.updateItem?.private,
     })
 
     console.log(props)
-    
+
     const navigate = useNavigate();
 
     const handleSubmit = (event:any) => {
