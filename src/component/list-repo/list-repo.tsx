@@ -6,20 +6,30 @@ import { Link } from 'react-router-dom';
 import {useGetListRepo} from 'redux/hook';
 import {deleteItem} from 'component/list-repo/list-repo-slice';
 import { RepoList } from 'model/repo.model';
+import UpdateRepoComponent from './update-repo/update-repo';
+import { useState } from 'react';
 
 function ListRepoComponent() {
 
   const dispatch = useDispatch()
   const repos : RepoList = useSelector((state: RootState) => state.repo)
+  const [openDialog,setOpenDialog] = useState(false);
+  const [idItem,setIdItem] = useState(0)
   useGetListRepo()
 
-  const handleDelete = (id:any) => {
+  const handleDelete = (id:number) => {
     dispatch(deleteItem(id));
+  }
+
+  const handleOpenDialog = (id:number) => {
+    setIdItem(id);
+    setOpenDialog(true);
   }
 
 
   return (
     <div>
+      <UpdateRepoComponent openDialog={openDialog} setOpenDialog={setOpenDialog} idItem={idItem}></UpdateRepoComponent>
       <div className='d-flex justify-content-center align-items-center mt-3'><h2>List Repo 1</h2></div><hr/>
       <div className='d-flex justify-content-center align-items-center mb-3'><Link style={{ textDecoration: 'none'}} to="/add-repo">ADD <AddIcon></AddIcon></Link></div>
       <TableContainer component={Paper}>
@@ -52,7 +62,7 @@ function ListRepoComponent() {
                 <TableCell align="right">{row.watchers_count}</TableCell>
                 <TableCell align="right">{row.open_issues}</TableCell>
                 <TableCell align="right">{row.private ? 'X' : 'O'}</TableCell>
-                <TableCell align="center"><Button>Update</Button></TableCell>
+                <TableCell align="center"><Button onClick={() => handleOpenDialog(row.id)}>Update</Button></TableCell>
                 <TableCell align="center" onClick={() => handleDelete(row.id)}><Button>Delete</Button></TableCell>
               </TableRow>
             ))}
