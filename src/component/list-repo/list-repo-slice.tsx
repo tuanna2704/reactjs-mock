@@ -15,7 +15,12 @@ export const repoSlice = createSlice({
       state.repo.unshift(action.payload);
      },
      updateItem(state,action) {
-        
+      state.repo.map((item:any,index) => {
+         if (item.id === action.payload.id) {
+            console.log(state.repo[index])
+            state.repo[index] = action.payload;
+         }
+      });
      },
      deleteItem(state,action) {
         state.repo = state.repo.filter((item) => item.id !== action.payload);
@@ -34,6 +39,6 @@ export const repoSlice = createSlice({
  
 })
 
-export const { addItem,deleteItem } = repoSlice.actions
+export const { addItem,deleteItem,updateItem } = repoSlice.actions
 
 export default repoSlice.reducer

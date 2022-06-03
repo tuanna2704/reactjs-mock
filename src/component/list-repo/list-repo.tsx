@@ -37,7 +37,7 @@ function ListRepoComponent() {
 
   return (
     <div>
-      <UpdateRepoComponent openDialog={openDialog} setOpenDialog={setOpenDialog} updateItem={itemUpdate}></UpdateRepoComponent>
+      {openDialog && <UpdateRepoComponent openDialog={openDialog} setOpenDialog={setOpenDialog} updateItem={itemUpdate}></UpdateRepoComponent>}
       <div className='d-flex justify-content-center align-items-center mt-3'><h2>List Repo 1</h2></div><hr/>
       <div className='d-flex justify-content-center align-items-center mb-3'><Link style={{ textDecoration: 'none'}} to="/add-repo">ADD <AddIcon></AddIcon></Link></div>
       <TableContainer component={Paper}>

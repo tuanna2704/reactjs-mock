@@ -6,24 +6,18 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RepoList } from 'model/repo.model';
-import { RootState } from 'redux/store';
+import 'component/list-repo/update-repo/update-repo.css'
+import { updateItem } from '../list-repo-slice';
+import { useDispatch } from 'react-redux';
 
 export default function UpdateRepoComponent(props:any) {
+  
     const [item,setItem] = useState({
-        name:props?.updateItem?.name,
-        id:props?.updateItem?.id,
-        description:props?.updateItem?.description,
-        watchers_count:props?.updateItem?.watchers_count,
-        language:props?.updateItem?.language,
-        open_issues:props?.updateItem?.open_issues,
-        private:props?.updateItem?.private,
+        ...props.updateItem
     })
 
-    console.log(props)
-
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = (event:any) => {
         event.preventDefault()
@@ -36,14 +30,14 @@ export default function UpdateRepoComponent(props:any) {
             open_issues: item.open_issues,
             private:item.private,
         })
-        console.log(item)
+        dispatch(updateItem(item))
         toast.success('UPDATE SUCCESS', {
             position: "top-center",
             autoClose: 1000,
             hideProgressBar: false,
             progress: undefined,
-          });
-        //   navigate('/list-repo')
+        });
+        props.setOpenDialog(false)
     }
 
     const handleChange = (event:any) => {
@@ -74,11 +68,10 @@ export default function UpdateRepoComponent(props:any) {
         }
     }
   return (
-    <div>
-      <Dialog open={props.openDialog} onClose={() => props.setOpenDialog(false)}>
-      <form className='d-flex flex-column justify-content-between' onSubmit={handleSubmit}>
+    <Dialog open={props.openDialog} onClose={() => props.setOpenDialog(false)}>
+      <form className='form d-flex flex-column justify-content-between' onSubmit={handleSubmit}>
               <TextField
-                  required
+                  disabled
                   id="outlined-required"
                   label="Id"
                   name='id'
@@ -136,10 +129,11 @@ export default function UpdateRepoComponent(props:any) {
                 }
                 label="Private"
               />
-          <Button onClick={() => props.setOpenDialog(false)}>Cancel</Button>
-          <Button type="submit" value="Submit">Save</Button>
+              <div className='d-flex justify-content-evenly'>
+                <Button onClick={() => props.setOpenDialog(false)}>Cancel</Button>
+                <Button type="submit" value="Submit">Save</Button>
+              </div>
         </form>
-      </Dialog>
-    </div>
+    </Dialog>
   );
 }
