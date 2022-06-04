@@ -47,6 +47,7 @@ function ListRepoComponent() {
               <TableCell><b>ID</b></TableCell>
               <TableCell><b>Name</b></TableCell>
               <TableCell><b>Description</b></TableCell>
+              <TableCell><b>Language</b></TableCell>
               <TableCell align="right"><b>Watchers Count</b></TableCell>
               <TableCell align="right"><b>Open Issues</b></TableCell>
               <TableCell align="right"><b>Private</b></TableCell>
@@ -67,6 +68,7 @@ function ListRepoComponent() {
                   {row.name}
                 </TableCell>
                 <TableCell>{row.description}</TableCell>
+                <TableCell>{row.language}</TableCell>
                 <TableCell align="right">{row.watchers_count}</TableCell>
                 <TableCell align="right">{row.open_issues}</TableCell>
                 <TableCell align="right">{row.private ? 'X' : 'O'}</TableCell>

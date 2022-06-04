@@ -17,7 +17,6 @@ export const repoSlice = createSlice({
      updateItem(state,action) {
       state.repo.map((item:any,index) => {
          if (item.id === action.payload.id) {
-            console.log(state.repo[index])
             state.repo[index] = action.payload;
          }
       });

@@ -2,10 +2,9 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import { Checkbox, FormControlLabel } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
 import 'component/list-repo/update-repo/update-repo.css'
 import { updateItem } from '../list-repo-slice';
 import { useDispatch } from 'react-redux';
@@ -16,7 +15,6 @@ export default function UpdateRepoComponent(props:any) {
         ...props.updateItem
     })
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleSubmit = (event:any) => {
