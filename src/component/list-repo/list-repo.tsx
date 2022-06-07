@@ -56,7 +56,7 @@ function ListRepoComponent() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {repos.repo.map((row:any) => (
+            {repos && repos.repo.map((row:any) => (
               <TableRow
                 key={row.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
